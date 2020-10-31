@@ -1,7 +1,7 @@
 # stickman
 Stickman
 
-Description: Hangman is a word-guessing game. The game sets up a secret word and the player tries to guess it by suggesting letters within a certain number of guesses.
+Description: Stickman is a word-guessing game. The game sets up a secret word and the player tries to guess it by suggesting letters within a certain number of guesses.
 
 Game objective: The end goal of the game is to guess the secret word in a defined number of attempts.
 
