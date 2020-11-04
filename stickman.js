@@ -72,6 +72,27 @@ window.onload = function() {
     }
     }
 
+    check = function() {
+        list.onclick = function() {
+            var guess = this.innerHTML;
+            this.setAttribute('class', 'active');
+            this.onclick = null;
+            for (var i = 0; i < secretWord.length; i++) {
+                if (secretWord[i] === guess) {
+                    letters[i].innerHTML = guess;
+                    counter += 1;
+                }
+            }
+            var j = secretWord.indexOf(guess);
+            if (j === -1) {
+                lives -= 1;
+                livesCounter();
+            } else {
+                livesCounter();
+            }
+        }
+    }
+
     play = function() {
         themes = [
             ['biathlon', 'curling', 'gymnastics', 'hockey', 'karate', 'skating', 'swimming','tennis'],
@@ -108,6 +129,11 @@ window.onload = function() {
         showClue.innerHTML = 'Clue: ' + hints[themeIndex][hintIndex]; 
     };
 
-    
+    document.getElementById('reset').onclick = function() {
+        correct.parentNode.removeChild(correct);
+        displayLetters.parentNode.removeChild(displayLetters);
+        showClue.innerHTML = '';
+        play();
+    }
         }
     
