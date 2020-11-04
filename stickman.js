@@ -74,7 +74,7 @@ window.onload = function() {
 
     play = function() {
         themes = [
-            ['biatlon', 'curling', 'gymnastics', 'hockey', 'karate', 'skating', 'swimming','tennis'],
+            ['biathlon', 'curling', 'gymnastics', 'hockey', 'karate', 'skating', 'swimming','tennis'],
             ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'],
             ['amsterdam', 'barcelona', 'berlin', 'paris', 'london', 'munich', 'tokyo', 'dallas-fort worth']
         ];
@@ -95,5 +95,19 @@ window.onload = function() {
     }
 
     play();
+
+    hint.onclick = function() {
+        hints = [
+            ['Consists of skiing and shooting', 'Involves sliding stones on ice', 'Involves using equipment such as bars and ropes', 'Played on ice with sticks', 'The level of skill a sportsman has is shown by the color of his belt', 'Involves circular patterns and jumps', 'Aquatics sport', 'Hitting a ball with a racket'],
+            ['Closest to the Sun', 'Closest to Earth', 'The Red Planet', 'The largest planet in the Solar System', 'Adorned with ringlets', 'Known as the sideways planet, it rotates on its side', 'The most distant ice giant'],
+            ['Capital of the Netherlands', 'Located on the Mediterranean', 'Capital of the Germany', 'City of Lights', 'Stands on the River Thames', 'Famous for Oktoberfest', 'The world most populous metropolis', 'JFK was assassinated there']
+        ];
+
+        var themeIndex = themes.indexOf(selectedTheme);
+        var hintIndex = selectedTheme.indexOf(secretWord);
+        showClue.innerHTML = 'Clue: ' + hints[themeIndex][hintIndex]; 
+    };
+
+    
         }
     
