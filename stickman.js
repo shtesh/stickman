@@ -60,5 +60,17 @@ window.onload = function() {
         }
     }
 
+    livesCounter = function() {
+        showLives.innerHTML = 'You have ' + lives + ' lives.';
+    if (lives < 1) {
+        showLives.innerHTML = 'Désolé, Game Over!';
+    }
+    for (var i = 0; i < letters.length; i++) {
+        if (counter + space === letters.length) {
+            showLives.innerHTML = 'Congratulations, Winner!';
+        }
+    }
+    }
+
         }
     
