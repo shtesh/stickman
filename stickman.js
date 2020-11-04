@@ -72,5 +72,28 @@ window.onload = function() {
     }
     }
 
+    play = function() {
+        themes = [
+            ['biatlon', 'curling', 'gymnastics', 'hockey', 'karate', 'skating', 'swimming','tennis'],
+            ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'],
+            ['amsterdam', 'barcelona', 'berlin', 'paris', 'london', 'munich', 'tokyo', 'dallas-fort worth']
+        ];
+
+        selectedTheme = themes[Math.floor(Math.random() * themes.length)];
+        secretWord = selectedTheme[Math.floor(Math.random() * selectedTheme.length)];
+        secretWord = secretWord.replace(/\s/g, '-');
+        console.log(secretWord);
+        buttons();
+
+        letters = [];
+        lives = 10;
+        counter = 0;
+        space = 0;
+        result();
+        livesCounter();
+        selectedTheme();
+    }
+
+    play();
         }
     
