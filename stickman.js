@@ -41,5 +41,24 @@ window.onload = function() {
         }
     }
 
+    result = function() {
+        wordHolder = document.getElementByID('hold');
+        correct = document.createElement('ul');
+
+        for (var i = 0; i < secretWord.length; i++) {
+            correct.setAttribute('id', 'secret-word');
+            guess = document.createElement('li');
+            guess.setAttribute('class', 'guess');
+            if (secretWord[i] === '-') {
+                guess.innerHTML = '-';
+            } else {
+                guess.innerHTML = '_';
+            }
+
+        letters.push(guess);
+        correct.appendChild(guess);
+        }
+    }
+
         }
     
