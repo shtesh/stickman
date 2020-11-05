@@ -2,7 +2,6 @@ window.onload = function() {
     var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm','n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     var themes;
     var selectedTheme;
-    var getHint;
     var secretWord;
     var guess;
     var letters;
@@ -15,6 +14,7 @@ window.onload = function() {
     var getHint = document.getElementById('hint');
     var showClue = document.getElementById('clue');
 
+    let stickman = new StickmanCanvas(secretWord);
     var buttons = function() {
         displayButtons = document.getElementById('buttons');
         displayLetters = document.createElement('ul');
@@ -42,7 +42,7 @@ window.onload = function() {
     }
 
     result = function() {
-        wordHolder = document.getElementByID('hold');
+        wordHolder = document.getElementById('hold');
         correct = document.createElement('ul');
 
         for (var i = 0; i < secretWord.length; i++) {
@@ -56,6 +56,7 @@ window.onload = function() {
             }
 
         letters.push(guess);
+        wordHolder.appendChild(correct);
         correct.appendChild(guess);
         }
     }
@@ -75,6 +76,7 @@ window.onload = function() {
     check = function() {
         list.onclick = function() {
             var guess = this.innerHTML;
+            console.log(guess);
             this.setAttribute('class', 'active');
             this.onclick = null;
             for (var i = 0; i < secretWord.length; i++) {
@@ -93,28 +95,30 @@ window.onload = function() {
         }
     }
 
+
     play = function() {
         themes = [
             ['biathlon', 'curling', 'gymnastics', 'hockey', 'karate', 'skating', 'swimming','tennis'],
             ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'],
             ['amsterdam', 'barcelona', 'berlin', 'paris', 'london', 'munich', 'tokyo', 'dallas-fort worth']
         ];
-
+    
         selectedTheme = themes[Math.floor(Math.random() * themes.length)];
         secretWord = selectedTheme[Math.floor(Math.random() * selectedTheme.length)];
         secretWord = secretWord.replace(/\s/g, '-');
         console.log(secretWord);
         buttons();
-
+    
         letters = [];
         lives = 10;
         counter = 0;
         space = 0;
         result();
         livesCounter();
-        selectedTheme();
+        selectTheme();
+        stickman.drawStickman(lives);
     }
-
+    
     play();
 
     hint.onclick = function() {
