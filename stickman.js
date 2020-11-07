@@ -1,7 +1,10 @@
 window.onload = function() {
-    var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 
-             'i', 'j', 'k', 'l', 'm','n', 'o', 'p', 'q', 'r', 's', 
-             't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 
+    'g', 'h', 
+            'i', 'j', 'k', 'l', 'm','n', 'o', 'p', 
+    'q', 'r', 's', 
+            't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    
     var themes; //Array of game themes
     var selectedTheme; //Game theme selected 
     var secretWord; //Selected word
@@ -55,6 +58,7 @@ window.onload = function() {
             guess.setAttribute('class', 'guess');
             if (secretWord[i] === '-') {
                 guess.innerHTML = '-';
+                space = 1;
             } else {
                 guess.innerHTML = '_';
             }
@@ -178,6 +182,9 @@ canvas = function () {
     
         selectedTheme = themes[Math.floor(Math.random() * themes.length)];
         secretWord = selectedTheme[Math.floor(Math.random() * selectedTheme.length)];
+        /*/\s/g replaces whitespaces with other characters
+        \s is a regular expression escape and means "any whitespace character".
+        /gat the end is a flag which means "match globally" (the regular expression will now match multiple times -- otherwise it would match just once).*/
         secretWord = secretWord.replace(/\s/g, '-');
         console.log(secretWord);
         buttons();
