@@ -28,6 +28,7 @@ h1, h2 {
   font-weight: 100;
   text-transform: uppercase;
   margin: 5px 0;
+  text-align: center;
 }
 
 h1 {
@@ -36,10 +37,18 @@ h1 {
 
 h2 {
   font-size: 1.6em;
+  padding-bottom: 15px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 p {
   font-size: 1.6em;
+  text-align: center;
 }
 
 #alphabet {
@@ -66,6 +75,7 @@ p {
   cursor: pointer;
   border-radius: 5px;
   border: solid 1px #fff;
+  text-align:center;
 }
 
 #alphabet li:hover {
@@ -79,12 +89,15 @@ p {
   display: block;
   padding: 0;
   display: block;
+  text-align: center;
 }
 
 #secret-word li {
   position: relative;
   list-style: none;
   margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   display: inline-block;
   padding: 0 10px;
   font-size: 1.6em;
@@ -116,6 +129,20 @@ p {
   font-size: 1.6em;
   text-align: center;
   display: block;
+}
+
+canvas {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
