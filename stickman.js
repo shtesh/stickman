@@ -4,7 +4,7 @@ window.onload = function() {
             'i', 'j', 'k', 'l', 'm','n', 'o', 'p', 
     'q', 'r', 's', 
             't', 'u', 'v', 'w', 'x', 'y', 'z'];
-    
+
     var themes; //Array of game themes
     var selectedTheme; //Game theme selected 
     var secretWord; //Selected word
@@ -70,7 +70,7 @@ window.onload = function() {
     };
 
     //Show remaining lives
-    livesCounter = function() {
+    let livesCounter = function() {
         showLives.innerHTML = 'You have ' + lives + ' lives.';
     if (lives < 1) {
         showLives.innerHTML = 'Désolé, Game Over!';
@@ -153,6 +153,7 @@ canvas = function () {
     check = function() {
         list.onclick = function() {
             var guess = (this.innerHTML);
+            console.log(guess);
             this.setAttribute('class', 'active');
             this.onclick = null;
             for (var i = 0; i < secretWord.length; i++) {
@@ -223,4 +224,5 @@ canvas = function () {
         play();
     };
 };
+
     
