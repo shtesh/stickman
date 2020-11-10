@@ -1,27 +1,27 @@
 window.onload = function() {
-    var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 
+    let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 
     'g', 'h', 
             'i', 'j', 'k', 'l', 'm','n', 'o', 'p', 
     'q', 'r', 's', 
             't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-    var themes; //Array of game themes
-    var selectedTheme; //Game theme selected 
-    var secretWord; //Selected word
-    var guess;
-    var letters= []; //Stored guesses
-    var lives; //Remaining lives
-    var counter;
-    var space;
+    let themes; //Array of game themes
+    let selectedTheme; //Game theme selected 
+    let secretWord; //Selected word
+    let guess;
+    let letters= []; //Stored guesses
+    let lives; //Remaining lives
+    let counter;
+    let space;
 
     //Get HTML elements
-    var showLives = document.getElementById('remainingLives');
-    var showTheme = document.getElementById('stheme');
-    var getHint = document.getElementById('hint');
-    var showClue = document.getElementById('clue');
+    let showLives = document.getElementById('remainingLives');
+    let showTheme = document.getElementById('stheme');
+    let getHint = document.getElementById('hint');
+    let showClue = document.getElementById('clue');
 
     //Create alphabet <ul>
-    var buttons = function() {
+    let buttons = function() {
         displayButtons = document.getElementById('buttons');
         displayLetters = document.createElement('ul');
 
@@ -37,7 +37,7 @@ window.onload = function() {
     };
 
     //Select a theme for the game round
-    var selectTheme = function() {
+    let selectTheme = function() {
         if (selectedTheme === themes[0]) {
             themeName.innerHTML = 'The Chosen Topic Is Olympic Sports';
         } else if (selectedTheme === themes[1]) {
@@ -48,7 +48,7 @@ window.onload = function() {
     };
 
     //Create guesses' <ul>
-    result = function() {
+    let result = function() {
         wordHolder = document.getElementById('hold');
         correct = document.createElement('ul');
 
@@ -83,13 +83,13 @@ window.onload = function() {
     };
 
 //Animate the stickman  
-var animate = function() {
+let animate = function() {
     var drawMe = lives;
     drawArray[drawMe]();
 };
 
 //Drawing the gallows and the stickman with canvas
-canvas = function () {
+let canvas = function () {
     myStickman = document.getElementById("stickman");
     context = myStickman.getContext('2d');
     context.beginPath();
@@ -97,7 +97,7 @@ canvas = function () {
     context.lineWidth = 2;
   };
   
-    head = function() {
+let head = function() {
       myStickman = document.getElementById("stickman");
       context = myStickman.getContext('2d');
       context.beginPath();
@@ -105,52 +105,52 @@ canvas = function () {
       context.stroke();
     };
     
-  draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
+let draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
     
     context.moveTo($pathFromx, $pathFromy);
     context.lineTo($pathTox, $pathToy);
     context.stroke(); 
 };
 
-   scaffold1 = function() {
+let scaffold1 = function() {
      draw (0, 150, 150, 150);
    };
    
-   scaffold2 = function() {
+let scaffold2 = function() {
      draw (10, 0, 10, 600);
    };
   
-   scaffold3 = function() {
+let scaffold3 = function() {
      draw (0, 5, 70, 5);
    };
   
-   scaffold4 = function() {
+let scaffold4 = function() {
      draw (60, 5, 60, 15);
    };
   
-   core = function() {
+let core = function() {
      draw (60, 36, 60, 70);
    };
   
-   rightArm = function() {
+let rightArm = function() {
      draw (60, 46, 100, 50);
    };
   
-   leftArm = function() {
+let leftArm = function() {
      draw (60, 46, 20, 50);
    };
   
-   rightLeg = function() {
+let rightLeg = function() {
      draw (60, 70, 100, 100);
    };
   
-   leftLeg = function() {
+let leftLeg = function() {
      draw (60, 70, 20, 100);
    };
   
-  drawArray = [rightLeg, leftLeg, rightArm, leftArm, core, head, scaffold4, scaffold3, scaffold2, scaffold1]; 
+let drawArray = [rightLeg, leftLeg, rightArm, leftArm, core, head, scaffold4, scaffold3, scaffold2, scaffold1]; 
   
-    check = function() {
+let check = function() {
         list.onclick = function() {
             var guess = (this.innerHTML);
             console.log(guess);
@@ -174,7 +174,7 @@ canvas = function () {
     };
 
 
-    play = function() {
+let play = function() {
         themes = [
             ['biathlon', 'curling', 'gymnastics', 'hockey', 'karate', 'skating', 'swimming','tennis'],
             ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'],
@@ -185,7 +185,7 @@ canvas = function () {
         secretWord = selectedTheme[Math.floor(Math.random() * selectedTheme.length)];
         /*/\s/g replaces whitespaces with other characters
         \s is a regular expression escape and means "any whitespace character".
-        /gat the end is a flag which means "match globally" (the regular expression will now match multiple times -- otherwise it would match just once).*/
+        /g at the end is a flag which means "match globally" (the regular expression will now match multiple times -- otherwise it would match just once).*/
         secretWord = secretWord.replace(/\s/g, '-');
         console.log(secretWord);
         buttons();
@@ -210,8 +210,8 @@ canvas = function () {
             ['Capital of the Netherlands', 'Located on the Mediterranean', 'Capital of the Germany', 'City of Lights', 'Stands on the River Thames', 'Famous for Oktoberfest', 'The world most populous metropolis', 'JFK was assassinated there']
         ];
 
-        var themeIndex = themes.indexOf(selectedTheme);
-        var hintIndex = selectedTheme.indexOf(secretWord);
+        let themeIndex = themes.indexOf(selectedTheme);
+        let hintIndex = selectedTheme.indexOf(secretWord);
         showClue.innerHTML = 'Clue: ' + hints[themeIndex][hintIndex]; 
     };
 

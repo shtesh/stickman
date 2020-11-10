@@ -1,11 +1,11 @@
 # stickman
 Stickman
 
-Description: Stickman is a word-guessing game. The game sets up a secret word and the player tries to guess it by suggesting letters within a certain number of guesses.
+Description: Stickman is a word-guessing game. The game sets up a secret word and the player tries to guess it by suggesting letters within a certain given number of guesses.
 
 Game objective: The end goal of the game is to guess the secret word in a defined number of attempts.
 
-Remaining lives count: Throughout the game, the player is notified of the lives remaining. In case of wrong letter suggestion, the wrong letter is printed on the game screen to facilitate erroneous suggestions log keeping for the player.
+Remaining lives count: Throughout the game, the player is notified of the lives remaining. 
 
 Game theme: The secret word belongs to a certain category, announced to the player upon game start.
 
@@ -13,69 +13,54 @@ Hint: There is a hint option available to the player that gives a clue by provid
 
 Game metrics: After achieving the limit of attempts available, the game is over and the player receives the visual punishment in the form of the death by hanging.
 
-Embedded keyboard: Taking into consideration mobile first approach and in order to make the game more kid-friendly – the keyboard constitutes the integral part of the game screen, so that the user does not need to resort to the conventional keyboard.
+Embedded keyboard: Taking into consideration mobile first approach and in order to make the game more kid-friendly (children are the ultimate end users) – the keyboard constitutes the integral part of the game screen, so that the user does not need to resort to the conventional keyboard.
 
 MVP
 
 Data Structure
 o	index.html
-o	styles.css
-o	canvas.js
+o	style.css
+o	stickman.js
 
 Properties:
-class HangmanCanvas
+alphabet
+themes
+selectedTheme
+secretWord
+guess
+letters //Stored guesses
+lives
+counter
+space
+canvas
+head
+scaffold1
+scaffold2
+scaffold3
+scaffold4
+core
+leftArm
 rightLeg
 leftLeg
-rightArm
-leftArm
-torso
-head
-frame4
-frame3
-frame2
-frame1
 drawArray
 
 Methods:
-createBoard
-drawLines
-writeCorrectLetter
-writeWrongLetter
-drawHangman
-gameOver
-winner
-
-o	hangman.js
-Properties:
-class Hangman
-words
-word
-getHint
-secretWord
-letters
-alphabet
-themes
-chosenTheme
-lives
-counter
-guessedLetters
-errorsLeft
-startGameButton
-startGame
-
-Methods:
-pickWord
-checkClickedLetter
-addCorrectLetter
-addWrongLetter
 showLives
 showTheme
 getHint
 showClue
-checkGameOver
-checkWinner
+buttons
+selectTheme
+result 
+livesCounter 
+animate
+draw
+check
+play
+hint
+reset
 
-States and States Transitions
+States 
 
 •	Start button
 o	It starts the game. 
@@ -83,7 +68,7 @@ o	It goes to gameScreen when Start button is clicked.
 
 •	gameScreen 
 o	The game is running while the lives > 0.
-o	It has Hint functionality (optional) on demand to assist the player in guessing the secret word.
+o	It has Hint functionality on demand to assist the player in guessing the secret word.
 o	It provides Start Over functionality to play again.
 
 •	GameOver alert
@@ -100,7 +85,8 @@ Links
 
 Trello https://trello.com/b/ajuGss0e/kanban-template
 
-Git
+Git https://github.com/shtesh/stickman
 
-Slides
-URIs for the project presentation
+Slides https://docs.google.com/presentation/d/1SdCxuvAY3t261mTCd_wnnsdCPqz4gMgikXELP-yKICI/edit?usp=sharing
+
+URIs for the project presentation https://shtesh.github.io/stickman/
