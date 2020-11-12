@@ -28,7 +28,7 @@ $white: #fff;
 }
 
 @mixin fade {
-    -moz-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in;
     -moz-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
 }
@@ -60,9 +60,9 @@ body {
 }
 
 canvas {
-    color:$white;
+    color: $white;
     border: $white dashed 2px;
-    padding:15px;
+    padding: 15px;
 }
 
 h1, h2 {
@@ -94,7 +94,7 @@ p {
 #alphabet li {
     float: left;
     margin: 0 10px 10px 0;
-    list-style:none;
+    list-style: none;
     width: 35px;
     height: 30px;
     padding-top: 10px;
@@ -139,7 +139,7 @@ p {
 
 #remainingLives {
     font-size: 1.6em;
-    text-align:center;
+    text-align: center;
     display: block;
 }
 
@@ -166,13 +166,13 @@ button{
 
 @media (max-width: 767px) {
     #alphabet {
-    padding:0 0 0 15px;
+    padding: 0 0 0 15px;
 }
 }
 
 @media (max-width: 480px) {
     #alphabet {
-    padding:0 0 0 25px;
+    padding: 0 0 0 25px;
 }
 }
 
