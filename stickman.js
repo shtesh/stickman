@@ -16,7 +16,7 @@ window.onload = function() {
 
     //Get HTML elements
     let showLives = document.getElementById('remainingLives');
-    let showTheme = document.getElementById('stheme');
+    let showTheme = document.getElementById('themeName');
     let getHint = document.getElementById('hint');
     let showClue = document.getElementById('clue');
 
@@ -25,7 +25,7 @@ window.onload = function() {
         displayButtons = document.getElementById('buttons');
         displayLetters = document.createElement('ul');
 
-        for (var i = 0; i < alphabet.length; i++) {
+        for (let i = 0; i < alphabet.length; i++) {
             displayLetters.id = 'alphabet';
             list = document.createElement('li');
             list.id = 'letter';
@@ -75,7 +75,7 @@ window.onload = function() {
     if (lives < 1) {
         showLives.innerHTML = 'Désolé, Game Over!';
     }
-    for (var i = 0; i < letters.length; i++) {
+    for (let i = 0; i < letters.length; i++) {
         if (counter + space === letters.length) {
             showLives.innerHTML = 'Congratulations, Winner!';
         }
@@ -84,7 +84,7 @@ window.onload = function() {
 
 //Animate the stickman  
 let animate = function() {
-    var drawMe = lives;
+    let drawMe = lives;
     drawArray[drawMe]();
 };
 
@@ -152,17 +152,17 @@ let drawArray = [rightLeg, leftLeg, rightArm, leftArm, core, head, scaffold4, sc
   
 let check = function() {
         list.onclick = function() {
-            var guess = (this.innerHTML);
+            let guess = (this.innerHTML);
             console.log(guess);
             this.setAttribute('class', 'active');
             this.onclick = null;
-            for (var i = 0; i < secretWord.length; i++) {
+            for (let i = 0; i < secretWord.length; i++) {
                 if (secretWord[i] === guess) {
                     letters[i].innerHTML = guess;
                     counter += 1;
                 }
             }
-            var j = (secretWord.indexOf(guess));
+            let j = (secretWord.indexOf(guess));
             if (j === -1) {
                 lives -= 1;
                 livesCounter();
@@ -170,7 +170,7 @@ let check = function() {
             } else {
                 livesCounter();
             }
-        };
+        }
     };
 
 
