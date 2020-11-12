@@ -9,10 +9,10 @@ window.onload = function() {
     let selectedTheme; //Game theme selected 
     let secretWord; //Selected word
     let guess;
-    let letters= []; //Stored guesses
+    let letters = [ ]; //Stored guesses
     let lives; //Remaining lives
-    let counter;
-    let space;
+    let counter; // Correct guesses counter
+    let space; //Number of spaces in secretWord '-'
 
     //Get HTML elements
     let showLives = document.getElementById('remainingLives');
@@ -52,7 +52,7 @@ window.onload = function() {
         wordHolder = document.getElementById('hold');
         correct = document.createElement('ul');
 
-        for (var i = 0; i < secretWord.length; i++) {
+        for (let i = 0; i < secretWord.length; i++) {
             correct.setAttribute('id', 'secret-word');
             guess = document.createElement('li');
             guess.setAttribute('class', 'guess');
@@ -89,7 +89,7 @@ let animate = function() {
 };
 
 //Drawing the gallows and the stickman with canvas
-let canvas = function () {
+let canvas = function() {
     myStickman = document.getElementById("stickman");
     context = myStickman.getContext('2d');
     context.beginPath();
@@ -190,7 +190,7 @@ let play = function() {
         console.log(secretWord);
         buttons();
     
-        letters = [];
+        letters = [ ];
         lives = 10;
         counter = 0;
         space = 0;
