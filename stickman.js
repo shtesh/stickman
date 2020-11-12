@@ -74,12 +74,22 @@ window.onload = function() {
         showLives.innerHTML = 'You have ' + lives + ' lives.';
     if (lives < 1) {
         showLives.innerHTML = 'Désolé, Game Over!';
+        document.body.innerHTML = "";
+        document.body.innerHTML = `
+        <h1 class = 'animate__animated animate__flipInX'>Désolé!</h1>
+        <img src = './images/loose.jpg'/>
+        `;
     }
     for (let i = 0; i < letters.length; i++) {
         if (counter + space === letters.length) {
             showLives.innerHTML = 'Congratulations, Winner!';
+            document.body.innerHTML = "";
+            document.body.innerHTML = `
+            <h1 class = 'animate__animated animate__zoomIn'>Congratulations, Winner!</h1>
+            <img src = './images/win.jpg'/>
+            `;
         }
-      }
+    }
     };
 
 //Animate the stickman  

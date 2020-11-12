@@ -60,7 +60,7 @@ play
 hint
 reset
 
-States 
+States and States Transitions
 
 •	Start button
 o	It starts the game. 
@@ -71,11 +71,11 @@ o	The game is running while the lives > 0.
 o	It has Hint functionality on demand to assist the player in guessing the secret word.
 o	It provides Start Over functionality to play again.
 
-•	GameOver alert
-o	It shows Game Over message.
+•	gameOver Screen
+o	It shows Game Over message and image.
 
-•	Win alert
-o	It shows Win message.
+•	winScreen 
+o	It shows Win message and image.
 
 Backlog
 •	Displayed error log: Upon wrong letter suggestion, the wrong letter is printed on the game screen to facilitate erroneous suggestions log keeping for the player.
